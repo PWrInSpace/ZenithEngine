@@ -16,7 +16,8 @@ namespace ZE::GFX::Data
 			: box({ right, up, back }, { left, down, front }) { Finalize(); }
 
 		static constexpr BoundingBox& GetEmpty() noexcept { return dummy; }
-
+		
+		const Math::BoundingBox& GetRawBoundingBox() const noexcept { return box; }
 		constexpr Float3& GetPositive() noexcept { return box.Center; }
 		constexpr Float3& GetNegative() noexcept { return box.Extents; }
 
